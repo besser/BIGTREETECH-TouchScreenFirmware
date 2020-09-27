@@ -928,6 +928,7 @@ void parseConfigKey(u16 index)
         infoSettings.rgb_led_strip = config_int();
       break;
 
+<<<<<<< HEAD
     //----------------------------CustomG-Code Commands upto 15 custom G-code
     case C_INDEX_CUSTOM_LABEL_1:
     case C_INDEX_CUSTOM_LABEL_2:
@@ -944,6 +945,45 @@ void parseConfigKey(u16 index)
     case C_INDEX_CUSTOM_LABEL_13:
     case C_INDEX_CUSTOM_LABEL_14:
     case C_INDEX_CUSTOM_LABEL_15:
+=======
+case C_INDEX_RGB_LED_STRIP:
+  if (inLimit(config_int(), 0, 1))
+    infoSettings.rgb_led_strip = config_int();
+  break;
+
+#ifdef LCD_LED_PWM_CHANNEL
+  case C_INDEX_BRIGHTNESS:
+    if (inLimit(config_int(), 0, ITEM_BRIGHTNESS_NUM - 1))
+      infoSettings.lcd_brightness = config_int();
+    if (infoSettings.lcd_brightness == 0)
+      infoSettings.lcd_brightness = 1; //If someone set it to 0 set it to 1
+    break;
+  case C_INDEX_BRIGHTNESS_IDLE:
+    if (inLimit(config_int(), 0, ITEM_BRIGHTNESS_NUM-1))
+      infoSettings.lcd_idle_brightness = config_int();
+    break;
+  case C_INDEX_BRIGHTNESS_IDLE_DELAY:
+    if (inLimit(config_int(), 0, ITEM_SECONDS_NUM-1))
+      infoSettings.lcd_idle_timer = config_int();
+    break;
+#endif
+  //---------------------------------------------------------CustomG-Code Commands upto 15 custom G-code
+  case C_INDEX_CUSTOM_LABEL_1:
+  case C_INDEX_CUSTOM_LABEL_2:
+  case C_INDEX_CUSTOM_LABEL_3:
+  case C_INDEX_CUSTOM_LABEL_4:
+  case C_INDEX_CUSTOM_LABEL_5:
+  case C_INDEX_CUSTOM_LABEL_6:
+  case C_INDEX_CUSTOM_LABEL_7:
+  case C_INDEX_CUSTOM_LABEL_8:
+  case C_INDEX_CUSTOM_LABEL_9:
+  case C_INDEX_CUSTOM_LABEL_10:
+  case C_INDEX_CUSTOM_LABEL_11:
+  case C_INDEX_CUSTOM_LABEL_12:
+  case C_INDEX_CUSTOM_LABEL_13:
+  case C_INDEX_CUSTOM_LABEL_14:
+  case C_INDEX_CUSTOM_LABEL_15:
+>>>>>>> Enable/disable RGB Led Strip support
     {
       char pchr[LINE_MAX_CHAR];
       strcpy(pchr,strrchr(cur_line,':') + 1);

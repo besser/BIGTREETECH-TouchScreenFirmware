@@ -98,7 +98,10 @@ X_CONFIG(KNOB_LED_IDLE)
 X_CONFIG(BRIGHTNESS)
 X_CONFIG(BRIGHTNESS_IDLE)
 X_CONFIG(BRIGHTNESS_IDLE_DELAY)
+<<<<<<< HEAD
 X_CONFIG(XY_OFFSET_PROBING)
+=======
+>>>>>>> Enable/disable RGB Led Strip support
 X_CONFIG(RGB_LED_STRIP)
 //-----------------------------CustomG-Code Commands upto 15 custom G-code
 X_CONFIG(CUSTOM_LABEL_1)

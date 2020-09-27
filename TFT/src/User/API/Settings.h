@@ -86,6 +86,7 @@ typedef struct
   uint16_t status_xyz_bg_color;
   uint16_t list_border_color;
   uint16_t list_button_color;
+<<<<<<< HEAD
   uint16_t mesh_min_color;
   uint16_t mesh_max_color;
 
@@ -99,6 +100,27 @@ typedef struct
 
   // Marlin Mode Settings
   uint8_t  mode;
+=======
+
+  uint8_t  touchSound;
+  uint8_t  alertSound;
+  uint8_t  toastSound;
+  uint8_t  auto_off;
+  uint8_t  terminalACK;
+  uint8_t  invert_axis[AXIS_NUM];
+  uint8_t  move_speed;
+  uint8_t  knob_led_color;
+  uint8_t  knob_led_idle;
+  uint8_t  persistent_info;
+  uint8_t  file_listmode;
+  uint8_t  ack_notification;
+  uint8_t  rgb_led_strip;
+
+  uint8_t  lcd_brightness;
+  uint8_t  lcd_idle_brightness;
+  uint8_t  lcd_idle_timer;
+
+>>>>>>> Enable/disable RGB Led Strip support
   uint8_t  serial_alwaysOn;
   uint16_t marlin_mode_bg_color;
   uint16_t marlin_mode_font_color;

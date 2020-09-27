@@ -278,6 +278,9 @@ void menuMachineSettings(void)
 #if RGB_LED_STRIP == 0
      {ICON_BACKGROUND,              LABEL_BACKGROUND},
 #endif
+#if RGB_LED_STRIP == 0
+     {ICON_BACKGROUND,              LABEL_BACKGROUND},
+#endif
      {ICON_BACKGROUND,              LABEL_BACKGROUND},
      {ICON_BACK,                    LABEL_BACK}}
   };
@@ -311,9 +314,15 @@ void menuMachineSettings(void)
       break;
 
 #if RGB_LED_STRIP == 1
+<<<<<<< HEAD
     case KEY_ICON_3:
       infoMenu.menu[++infoMenu.cur] = menuRGBSettings;
       break;
+=======
+      case KEY_ICON_3:
+        infoMenu.menu[++infoMenu.cur] = menuRGBSettings;
+        break;
+>>>>>>> Enable/disable RGB Led Strip support
 
     case KEY_ICON_4:
       infoMenu.menu[++infoMenu.cur] = menuTuning;
@@ -323,15 +332,29 @@ void menuMachineSettings(void)
       case KEY_ICON_5:
         infoMenu.menu[++infoMenu.cur] = menuEepromSettings;
         break;
+<<<<<<< HEAD
     #endif
     case KEY_ICON_6:
       if (infoMachineSettings.caseLightsBrightness == ENABLED)
         infoMenu.menu[++infoMenu.cur] = menuCaseLight;
       break;
+=======
+#endif
+>>>>>>> Enable/disable RGB Led Strip support
 #else
     case KEY_ICON_3:
       infoMenu.menu[++infoMenu.cur] = menuTuning;
       break;
+<<<<<<< HEAD
+=======
+
+  #if QUICK_EEPROM_BUTTON == 1
+    case KEY_ICON_4:
+      infoMenu.menu[++infoMenu.cur] = menuEepromSettings;
+      break;
+  #endif
+#endif
+>>>>>>> Enable/disable RGB Led Strip support
 
     #if QUICK_EEPROM_BUTTON == 1
       case KEY_ICON_4:

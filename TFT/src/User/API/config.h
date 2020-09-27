@@ -109,7 +109,10 @@ extern "C" {
 #define CONFIG_BRIGHTNESS              "lcd_brightness:"
 #define CONFIG_BRIGHTNESS_IDLE         "lcd_idle_brightness:"
 #define CONFIG_BRIGHTNESS_IDLE_DELAY   "lcd_idle_delay:"
+<<<<<<< HEAD
 #define CONFIG_XY_OFFSET_PROBING       "xy_offset_probing:"
+=======
+>>>>>>> Enable/disable RGB Led Strip support
 #define CONFIG_RGB_LED_STRIP           "rgb_led_strip:"
 //-----------------------------Custom G-Code Commands (up to 15 custom G-code)
 #define CONFIG_CUSTOM_LABEL_1   "custom_label_1:"

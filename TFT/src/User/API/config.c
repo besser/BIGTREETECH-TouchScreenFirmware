@@ -923,6 +923,11 @@ void parseConfigKey(u16 index)
         break;
     #endif
 
+    case C_INDEX_RGB_LED_STRIP:
+      if (inLimit(config_int(), 0, 1))
+        infoSettings.rgb_led_strip = config_int();
+      break;
+
     //----------------------------CustomG-Code Commands upto 15 custom G-code
     case C_INDEX_CUSTOM_LABEL_1:
     case C_INDEX_CUSTOM_LABEL_2:

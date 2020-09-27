@@ -55,6 +55,8 @@
 #define DEFAULT_LCD_IDLE_TIMER      0   // 0: LCD_DIM_OFF
 #define LCD_DIM_CUSTOM_SECONDS      600 // Custom value in seconds. Will be used if LCD_DIM_CUSTOM_SECONDS is set as idle timer.
 
+// RGB LED STRIP support
+#define RGB_LED_STRIP false
 //===========================================================================
 //=========================== Marlin Mode Settings ==========================
 //===========================================================================

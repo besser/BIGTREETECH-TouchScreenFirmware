@@ -266,20 +266,29 @@ void menuMachineSettings(void)
     {{ICON_PARAMETER,               LABEL_PARAMETER_SETTING},
      {ICON_GCODE,                   LABEL_TERMINAL},
      {ICON_CUSTOM,                  LABEL_CUSTOM},
+#if RGB_LED_STRIP == 1
      {ICON_RGB_SETTINGS,            LABEL_RGB_SETTINGS},
+#endif
      {ICON_TUNING,                  LABEL_TUNING},
   #if QUICK_EEPROM_BUTTON == 1
      {ICON_EEPROM_SAVE,             LABEL_EEPROM_SETTINGS},
   #else
      {ICON_BACKGROUND,              LABEL_BACKGROUND},
-  #endif
+#endif
+#if RGB_LED_STRIP == 0
+     {ICON_BACKGROUND,              LABEL_BACKGROUND},
+#endif
      {ICON_BACKGROUND,              LABEL_BACKGROUND},
      {ICON_BACK,                    LABEL_BACK}}
   };
 
   const ITEM itemCaseLight = {ICON_CASE_LIGHT, LABEL_CASE_LIGHT};
   if (infoMachineSettings.caseLightsBrightness == ENABLED)
+ #if RGB_LED_STRIP == 1
     machineSettingsItems.items[KEY_ICON_6] = itemCaseLight;
+#else
+    machineSettingsItems.items[KEY_ICON_5] = itemCaseLight;
+#endif
 
   KEY_VALUES key_num = KEY_IDLE;
   menuDrawPage(&machineSettingsItems);
@@ -301,6 +310,7 @@ void menuMachineSettings(void)
       infoMenu.menu[++infoMenu.cur] = menuCustom;
       break;
 
+#if RGB_LED_STRIP == 1
     case KEY_ICON_3:
       infoMenu.menu[++infoMenu.cur] = menuRGBSettings;
       break;
@@ -318,7 +328,22 @@ void menuMachineSettings(void)
       if (infoMachineSettings.caseLightsBrightness == ENABLED)
         infoMenu.menu[++infoMenu.cur] = menuCaseLight;
       break;
+#else
+    case KEY_ICON_3:
+      infoMenu.menu[++infoMenu.cur] = menuTuning;
+      break;
 
+    #if QUICK_EEPROM_BUTTON == 1
+      case KEY_ICON_4:
+        infoMenu.menu[++infoMenu.cur] = menuEepromSettings;
+        break;
+    #endif
+
+    case KEY_ICON_5:
+      if (infoMachineSettings.caseLightsBrightness == ENABLED)
+        infoMenu.menu[++infoMenu.cur] = menuCaseLight;
+      break;
+#endif
     case KEY_ICON_7:
       infoMenu.cur--;
       break;

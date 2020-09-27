@@ -1064,6 +1064,11 @@ void parseConfigKey(u16 index)
 #endif //lcd_led_pwm
 #endif
 
+case C_INDEX_RGB_LED_STRIP:
+  if (inLimit(config_int(), 0, 1))
+    infoSettings.rgb_led_strip = config_int();
+  break;
+
 #ifdef LCD_LED_PWM_CHANNEL
   case C_INDEX_BRIGHTNESS:
     if (inLimit(config_int(), 0, ITEM_BRIGHTNESS_NUM - 1))

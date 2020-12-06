@@ -329,14 +329,14 @@ void menuMachineSettings(void)
         }
         break;
 #else
-    case KEY_ICON_3:
-      infoMenu.menu[++infoMenu.cur] = menuTuning;
-      break;
+      case KEY_ICON_3:
+        infoMenu.menu[++infoMenu.cur] = menuTuning;
+        break;
 
   #if QUICK_EEPROM_BUTTON == 1
-    case KEY_ICON_4:
-      infoMenu.menu[++infoMenu.cur] = menuEepromSettings;
-      break;
+      case KEY_ICON_4:
+        infoMenu.menu[++infoMenu.cur] = menuEepromSettings;
+        break;
   #endif
       case KEY_ICON_5:
         if (infoMachineSettings.caseLightsBrightness == ENABLED){

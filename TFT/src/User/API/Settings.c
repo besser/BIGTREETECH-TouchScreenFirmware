@@ -20,7 +20,7 @@ const u8 default_custom_enabled[] = CUSTOM_GCODE_ENABLED;
 void infoSettingsReset(void)
 {
 // General Settings
-  infoSettings.unified_menu           = UNIFIED_MENU;
+  infoSettings.status_screen          = ENABLE_STATUS_SCREEN;
   infoSettings.baudrate               = BAUDRATE;
   infoSettings.language               = LANG_DEFAULT;
 
@@ -103,6 +103,7 @@ void infoSettingsReset(void)
   infoSettings.lcd_brightness         = DEFAULT_LCD_BRIGHTNESS;
   infoSettings.lcd_idle_brightness    = DEFAULT_LCD_IDLE_BRIGHTNESS;
   infoSettings.lcd_idle_timer         = DEFAULT_LCD_IDLE_TIMER;
+  infoSettings.xy_offset_probing      = ENABLED;
 
 // Start, End & Cancel G-codes
   infoSettings.send_start_gcode       = DISABLED;
@@ -147,7 +148,8 @@ void infoSettingsReset(void)
   resetConfig();
 }
 
-void initMachineSetting(void){
+void initMachineSetting(void)
+{
   // some settings are assumes as active unless reported disabled by marlin
   infoMachineSettings.isMarlinFirmware        = -1; // set fimware type to -1 to avoid repeated ABL gcode on mode change
   infoMachineSettings.EEPROM                  = ENABLED;

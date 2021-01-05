@@ -96,7 +96,11 @@ typedef struct
   uint8_t persistent_info;
   uint8_t file_listmode;
   uint8_t ack_notification;
+<<<<<<< HEAD
   uint8_t rgb_led_strip;
+=======
+  uint8_t  rgb_led_strip;
+>>>>>>> 3677e850754c28ff2ae823af451368abf4784524
 
   // Marlin Mode Settings
   uint8_t  mode;

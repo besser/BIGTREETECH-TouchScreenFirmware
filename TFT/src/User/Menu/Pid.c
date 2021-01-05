@@ -165,16 +165,22 @@ static inline void pidStart(void)
 
 #if RGB_LED_STRIP == 1
 <<<<<<< HEAD
+<<<<<<< HEAD
   mustStoreCmd("M150 R255 U0 B0\n");  // set LED light to RED
 #endif
   mustStoreCmd("M106 S255\n");        // set fan speed to max
   mustStoreCmd("G4 S1\n");            // wait 1 sec
 =======
+=======
+>>>>>>> 3677e850754c28ff2ae823af451368abf4784524
   mustStoreCmd("M150 R255 U0 B0\n");                                           // set LED light to RED
 #endif
   mustStoreCmd("M106 S255\n");                                                 // set fan speed to max
   mustStoreCmd("G4 S1\n");                                                     // wait 1 sec
+<<<<<<< HEAD
 >>>>>>> Enable/disable RGB Led Strip support
+=======
+>>>>>>> 3677e850754c28ff2ae823af451368abf4784524
 
   for (uint8_t i = 0; i < MAX_HEATER_COUNT; i++)  // hotends + bed + chamber
   {
@@ -186,6 +192,7 @@ static inline void pidStart(void)
   }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   mustStoreCmd("M107\n");             // stop fan
 #if RGB_LED_STRIP == 1
   mustStoreCmd("M150 R0 U255 B0\n");  // set LED light to GREEN
@@ -194,6 +201,11 @@ static inline void pidStart(void)
 #if RGB_LED_STRIP == 1
   mustStoreCmd("M150 R0 U255 B0\n");                                           // set LED light to GREEN
 >>>>>>> Enable/disable RGB Led Strip support
+=======
+  mustStoreCmd("M107\n");                                                      // stop fan
+#if RGB_LED_STRIP == 1
+  mustStoreCmd("M150 R0 U255 B0\n");                                           // set LED light to GREEN
+>>>>>>> 3677e850754c28ff2ae823af451368abf4784524
 #endif
 
   infoMenu.menu[++infoMenu.cur] = menuPidWait;

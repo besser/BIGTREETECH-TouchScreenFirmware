@@ -278,20 +278,32 @@ void menuMachineSettings(void)
 #if RGB_LED_STRIP == 0
      {ICON_BACKGROUND,              LABEL_BACKGROUND},
 #endif
+<<<<<<< HEAD
 #if RGB_LED_STRIP == 0
      {ICON_BACKGROUND,              LABEL_BACKGROUND},
 #endif
+=======
+>>>>>>> 3677e850754c28ff2ae823af451368abf4784524
      {ICON_BACKGROUND,              LABEL_BACKGROUND},
      {ICON_BACK,                    LABEL_BACK}}
   };
 
   const ITEM itemCaseLight = {ICON_CASE_LIGHT, LABEL_CASE_LIGHT};
   if (infoMachineSettings.caseLightsBrightness == ENABLED)
+<<<<<<< HEAD
  #if RGB_LED_STRIP == 1
+=======
+  {
+#if RGB_LED_STRIP == 1
+>>>>>>> 3677e850754c28ff2ae823af451368abf4784524
     machineSettingsItems.items[KEY_ICON_6] = itemCaseLight;
 #else
     machineSettingsItems.items[KEY_ICON_5] = itemCaseLight;
 #endif
+<<<<<<< HEAD
+=======
+  }
+>>>>>>> 3677e850754c28ff2ae823af451368abf4784524
 
   KEY_VALUES key_num = KEY_IDLE;
   menuDrawPage(&machineSettingsItems);
@@ -315,6 +327,7 @@ void menuMachineSettings(void)
 
 #if RGB_LED_STRIP == 1
 <<<<<<< HEAD
+<<<<<<< HEAD
     case KEY_ICON_3:
       infoMenu.menu[++infoMenu.cur] = menuRGBSettings;
       break;
@@ -323,15 +336,21 @@ void menuMachineSettings(void)
         infoMenu.menu[++infoMenu.cur] = menuRGBSettings;
         break;
 >>>>>>> Enable/disable RGB Led Strip support
+=======
+      case KEY_ICON_3:
+        infoMenu.menu[++infoMenu.cur] = menuRGBSettings;
+        break;
+>>>>>>> 3677e850754c28ff2ae823af451368abf4784524
 
     case KEY_ICON_4:
       infoMenu.menu[++infoMenu.cur] = menuTuning;
       break;
 
-    #if QUICK_EEPROM_BUTTON == 1
+  #if QUICK_EEPROM_BUTTON == 1
       case KEY_ICON_5:
         infoMenu.menu[++infoMenu.cur] = menuEepromSettings;
         break;
+<<<<<<< HEAD
 <<<<<<< HEAD
     #endif
     case KEY_ICON_6:
@@ -370,9 +389,37 @@ void menuMachineSettings(void)
     case KEY_ICON_7:
       infoMenu.cur--;
       break;
+=======
+  #endif
+      case KEY_ICON_6:
+        if (infoMachineSettings.caseLightsBrightness == ENABLED){
+          infoMenu.menu[++infoMenu.cur] = menuCaseLight;
+        }
+        break;
+#else
+      case KEY_ICON_3:
+        infoMenu.menu[++infoMenu.cur] = menuTuning;
+        break;
 
-    default:
-      break;
+  #if QUICK_EEPROM_BUTTON == 1
+      case KEY_ICON_4:
+        infoMenu.menu[++infoMenu.cur] = menuEepromSettings;
+        break;
+  #endif
+      case KEY_ICON_5:
+        if (infoMachineSettings.caseLightsBrightness == ENABLED){
+          infoMenu.menu[++infoMenu.cur] = menuCaseLight;
+        }
+        break;
+#endif
+>>>>>>> 3677e850754c28ff2ae823af451368abf4784524
+
+      case KEY_ICON_7:
+        infoMenu.cur--;
+        break;
+
+      default:
+        break;
     }
     loopProcess();
   }

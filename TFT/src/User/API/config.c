@@ -929,6 +929,9 @@ void parseConfigKey(u16 index)
       break;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3677e850754c28ff2ae823af451368abf4784524
     //----------------------------CustomG-Code Commands upto 15 custom G-code
     case C_INDEX_CUSTOM_LABEL_1:
     case C_INDEX_CUSTOM_LABEL_2:

@@ -110,6 +110,10 @@ extern "C" {
 #define CONFIG_BRIGHTNESS_IDLE         "lcd_idle_brightness:"
 #define CONFIG_BRIGHTNESS_IDLE_DELAY   "lcd_idle_delay:"
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+#define CONFIG_RGB_LED_STRIP           "rgb_led_strip:"
+>>>>>>> 3677e850754c28ff2ae823af451368abf4784524
 #define CONFIG_XY_OFFSET_PROBING       "xy_offset_probing:"
 =======
 >>>>>>> Enable/disable RGB Led Strip support
